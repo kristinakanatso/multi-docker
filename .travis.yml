@@ -9,13 +9,13 @@ script:
   - docker run kristinakanatso/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t kristinakanatso/multi-client ./client
-  - docker build -t kristinakanatso/multi-nginx ./nginx
-  - docker build -t kristinakanatso/multi-server ./server
-  - docker build -t kristinakanatso/multi-worker ./worker
+  - docker build -t xtzaferis/multi-client ./client
+  - docker build -t xtzaferis/multi-nginx ./nginx
+  - docker build -t xtzaferis/multi-server ./server
+  - docker build -t xtzaferis/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push kristinakanatso/multi-client
-  - docker push kristinakanatso/multi-nginx
-  - docker push kristinakanatso/multi-server
-  - docker push kristinakanatso/multi-worker
+  - docker push xtzaferis/multi-client
+  - docker push xtzaferis/multi-nginx
+  - docker push xtzaferis/multi-server
+  - docker push xtzaferis/multi-worker
 
